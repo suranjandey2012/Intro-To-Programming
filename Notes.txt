@@ -1,0 +1,48 @@
+-g3 allows to debug macros and hash define constants.
+
+-Wall: It means warning all.
+
+gcc -g3 -Wall pob1.c  -> Compling step
+
+gdb ./a.out  -Run the a.out file
+
+(gdb) run 5 input.txt  -> To provide command line args no need to use 
+
+./a.out arg1 arg2
+
+
+we can use short forms like 
+
+(gdb) r arg1 arg2
+
+(gdb) h
+
+(gdb) q
+
+(gdb) run < input.txt -> (a.out) is accepting the input from file.
+
+(gdb) break main -> gdb should stop before executing the main function.
+
+(gdb) l -> list the error.
+
+(gdb) p stands for print
+
+(gdb) b main -> set a break point at main
+
+(gdb) n -> next break point
+
+(gdb) i b -> information about the break points
+
+(gdb) n -> To continue to next lines
+
+(gdb) d -> deletes all break points
+
+(gdb) d number -> deletes a particular break point.
+
+(gdb) dis number -> Disable a break point
+
+(gdb) en number -> Enable the number breakpoint
+
+(gdb) breakpoint checks the prev lines.
+
+(gdb) s -> Step into that function (whenever a function arrives then step into that function)

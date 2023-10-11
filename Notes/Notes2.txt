@@ -1,0 +1,45 @@
+Day1
+-----
+
+stack.h
+
+will only have only the type definitions and the function decleration in stack.h
+
+stack.c 
+will have the code of the functions but no main function.
+
+Stack Testing/ Problem.c 
+will have the main()
+
+---------------------------------------------------------------------------------------
+
+gcc -E -> Does the preprocessor statements compilation skips the next set of instructions.
+
+gcc -c -> It does not do the linking and the loading it only compiles the .c file.
+
+gcc -g -Wall stack.c stack_testing.c -> If we do this then we have to compile the stack.c all the time for different programs(stack_testing.c)
+
+gcc -g -Wall -c stack.c -> If we use this statement then we will compile the stack.c just once and next onwards we just need to use the below statement for different problems.
+
+gcc -g -Wall stack.o problem1.c -> This statement will generate the executable file for problem1.c
+
+./a.out -> Run the executable file.
+
+
+
+In the stack.h file use the following decleration:
+
+#ifndef S_H (can use anything)
+#define S_H
+#include<stdio.h>
+
+
+#endif
+
+If use the above lines then even if by mistake the user declared the #include<stdio.h> it won't give error due to redefinition.
+
+
+In programs using math.h if we don't use the -lm during compilation then we get an -ld error.
+
+
+

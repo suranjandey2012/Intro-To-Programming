@@ -1,0 +1,79 @@
+1. How do you compile : 
+    $ gcc -g3
+    
+2. How do you run ?
+    $ gdb a.out
+    $ (gdb) run < input.txt
+    $ (gdb) run arg1 arg2 arg3 ...
+    
+3. How do you stop ? 
+    break (b) variants  (ppt page 5)
+    
+4. Difference of 'n' and 's' :-
+    During function call like x = f(i,j+1,...)
+    's' for step by step inside function
+    'n' for complete execution
+    
+5. To finish the function (when you dont want to see the rest) :-
+    (gdb) fin
+    
+6. To skip some part of code :-
+    unt line_number (continue till line 20)
+    
+7. Conditional Break point :-
+    for(i=1;...)
+    {
+        ...
+        line 11
+    }
+    (gdb) b 11 // break point line number
+    (gdb) cond 2 ((i==91)||(i==92)) // 2 is the break point number
+    -> it will stop in iteration only at i = 91 and i = 92 
+    -> after it we will use continue or untill
+    
+8.  To show expression whenever program stops :-
+    (gdb) display a[i] 		-> always displays , permanent
+    (gdb) info locals 		-> print local variables in the function
+    (gdb) info args 		-> prints arguments of the function
+    
+9.  To store history of gdb :-
+    ~/.gdbinit
+    write :-
+    set history save on
+    set history size 1000
+    
+10. char buf[]
+    int i, j, k;
+    
+    To stop program whenever expression changes and show previous and current value :-
+    (gdb) watch p -> a		-> Displays old and new value of p when ever change occurs in a
+    (gdb) watch a[i]		-> Displays old and new whole array when ever change occurs
+    (gdb) watch buf		-> Displays old and new whole array when ever change occurs
+    
+11. (gdb) tui enable 		-> Show code and gdb command prompt in two halves of the screen
+    (gdb) print (int [10])p	-> To show whole array of 10 integers and p is the first address of it
+    		OR		-> GDB dynamic array
+    (gdb) int *p@10		-> To show 10 elements whose start address is p
+12. Program's Memory :-
+    # define LEN 100
+    int a[LEN], i, N;		-> Global variable
+    int main(       )
+    {
+    int i;
+    char a[10];
+    }
+    code/text -> read only / non modifiable
+    global variables are in global region memory and initialised to 0
+    heap -> malloc, calloc
+    stack -> Recursive call to functions are stored like local variable in LIFO manner
+    activation stack -> during runtime -> stores activation records / stack frame of different functions
+13. in  GDB :-
+    (gdb) where 		-> shows history of activation stack 
+    (gdb)up 			-> take down in the stack
+    (gdb)down 			-> take up in the stack
+    
+    
+    
+
+
+
